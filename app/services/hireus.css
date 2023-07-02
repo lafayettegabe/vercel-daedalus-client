@@ -1,0 +1,123 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-slow {
+    animation: rotate 20s infinite linear;
+}
+
+.h-screenHeader {
+    height: calc(100vh - 100px);
+}
+
+.services-title {
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Ginger Bold';
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 0.5em;
+    line-height: 1.2em;
+    letter-spacing: 0.04em;
+    margin-left: auto;
+    margin-right: auto;
+    transition-delay: 1.4s;
+    transition-duration: 0.76s;
+}
+
+.serices-li {
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.7em;
+    font-family: 'Ginger Regular';
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.6em;
+    transition-delay: 1.6s;
+    transition-duration: 0.76s;
+}
+
+.fill {
+    --cfill: #8DB1FB; /* the border color */
+    --b: 10px;    /* the border thickness*/
+    --g: 5px;     /* the gap on hover */
+    
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%,var(--cfill) 0;
+    background: 
+      conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g))
+       var(--_i,200%) 0  /200% var(--_i,var(--b))  no-repeat,
+      conic-gradient(            at bottom var(--b) left  var(--b),var(--_g))
+       0   var(--_i,200%)/var(--_i,var(--b)) 200%  no-repeat;
+    transition: .3s, background-position .3s .3s;
+    cursor: pointer;
+  }
+  .fill:hover {
+    --_i: 100%;
+    transition: .3s, background-size .3s .3s;
+  }
+  
+  /* NEXT */
+  
+  .outset {
+    --color: #D0E4FD; /* the border color */
+    --border: 10px;   /* the border thickness*/
+    --offset: 20px;   /* control the offset*/
+    --gap: 5px;       /* the gap on hover */
+    
+    --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0;
+    --_o: calc(3*var(--offset));
+    padding: 
+      calc(var(--gap) + var(--border))
+      calc(var(--gap) + var(--border) + var(--offset))
+      calc(var(--gap) + var(--border) + var(--offset))
+      calc(var(--gap) + var(--border));
+    background: 
+      linear-gradient(      var(--_c)) var(--_o) var(--_o), 
+      linear-gradient(90deg,var(--_c)) var(--_o) var(--_o);
+    background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
+    background-repeat: no-repeat;
+    filter: grayscale(.4);
+    transition: .5s;
+    cursor: pointer;
+  }
+  .outset:hover {
+    background-position: 0px 0px;
+    background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
+    filter: grayscale(0);
+  }
+  
+  
+  /* NEXT */
+  
+  
+  .crosshair {
+    --g: 4px;     /* the gap */
+    --border: 12px;    /* border thickness*/
+    --c: #100D33; /* the color */
+    
+    
+    padding: calc(var(--g) + var(--border));
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+    background:
+      var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+      var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--border),var(--border) 200%;
+    cursor: pointer;
+    filter: grayscale(50%);
+    transition: .3s;
+  }
+  .crosshair:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
+  }
