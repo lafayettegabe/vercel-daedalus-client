@@ -131,7 +131,7 @@ export default function Home() {
                             • Passionate book lover <br />
                             • Machine Learning Enthusiast <br />
                             • Addicted to the dopamine rush of coding. <br />
-                            • When I'm not coding, I'm usually reading, playing games or hanging out with my gf.
+                            • When I&apos;m not coding I am usually reading, playing games or hanging out with my gf.
                         </div>
                         <div className="h-1/4 flex flex-row items-center gap-4 text-white">
                             <FacebookFilled className="text-xl" />
@@ -142,7 +142,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className='flex flex-row justify-end'>
-                        <img src='/images/avatar-gabriel.png' className='h-auto max-h-full' style={{ width: '400px' }} alt='Avatar'></img>
+                        <Image src='/images/avatar-gabriel.png' className='h-auto max-h-full' style={{ width: '400px' }} alt='Avatar'/>
                     </div>
                 </div>
             </div>
@@ -151,7 +151,7 @@ export default function Home() {
                 {/* <Divider className='border-black top-0'>Meet the founders</Divider> */}
                 <div className='grid grid-cols-2 mx-auto gap-8' style={{ width: '1200px' }}>
                     <div className='flex flex-row justify-start'>
-                        <img src='/images/avatar-lucas.png' className='h-auto max-h-full' style={{ width: '400px' }} alt='Avatar'></img>
+                        <Image src='/images/avatar-lucas.png' className='h-auto max-h-full' style={{ width: '400px' }} alt='Avatar'/>
                     </div>
                     <div className='w-full flex flex-col gap-4 justify-end items-end text-end'>
                         <div className='font-light text-white'>Lucas Diniz - CD | CO-FOUNDER</div>
@@ -161,7 +161,7 @@ export default function Home() {
                             • Passionate book lover <br />
                             • Machine Learning Enthusiast <br />
                             • Addicted to the dopamine rush of coding. <br />
-                            • When I'm not coding, I'm usually reading, playing games or hanging out with my gf.
+                            • When I&apos;m not coding, I&apos;m usually reading, playing games or hanging out with my gf.
                         </div>
                         <div className="h-1/4 flex flex-row items-center gap-4 text-white">
                             <FacebookFilled className="text-xl" />

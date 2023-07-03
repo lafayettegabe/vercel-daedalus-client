@@ -88,7 +88,7 @@ export default function HireUS() {
                             Your path to growth
                         </div>
                         <div className="w-[600px]">
-                            At Dotlogics, we believe that unlocking growth requires a multifaceted approach. That's why we're a full-service agency dedicated to building excitement and delivering amazing experiences for your customers.
+                            At Dotlogics, we believe that unlocking growth requires a multifaceted approach. a full-service agency dedicated to building excitement and delivering amazing experiences for your customers.
                         </div>
                         <div id="accordion-collapse" data-accordion="collapse">
                             <h2 id="accordion-collapse-heading-1">
