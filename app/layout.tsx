@@ -2,11 +2,11 @@
 import './globals.css'
 import { ThemeProvider } from "next-themes"
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import TopButton from '@/components/topButton';
-import CookieConsent from '@/components/cookiesModal';
-import Metadata from '@/components/Metadata';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import TopButton from '../components/topButton';
+import CookieConsent from '../components/cookiesModal';
+import Metadata from '../components/Metadata';
 
 // import SetDarkModePreference from '@/components/checkDarkPreference';
 // import ScrollSection from '@/components/ScrollSection';

@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import RootLayout from '@/layout.tsx';
+import RootLayout from './layout';
 import PageTransitionWrapper from '@/components/PageTransitionWrapper';
 import { ThemeProvider } from "next-themes";
 
