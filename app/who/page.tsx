@@ -17,7 +17,7 @@ export default function Home() {
     const [whiteColorValue, setWhiteColorValue] = useState('#7598F7');
 
     useEffect(() => {
-        const handleMouseMove = (event) => {
+        const handleMouseMove = (event: MouseEvent) => {
             const { clientX, clientY } = event;
             const offsetX = (clientX - window.innerWidth / 2) / 40;
             const offsetY = (clientY - window.innerHeight / 2) / 40;

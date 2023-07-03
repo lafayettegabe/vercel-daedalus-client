@@ -19,7 +19,7 @@ function handleArrowClick() {
 }
   
   useEffect(() => {
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (event: MouseEvent)  => {
       const { clientX, clientY } = event;
       const offsetX = (clientX - window.innerWidth / 2) / 40;
       const offsetY = (clientY - window.innerHeight / 2) / 40;

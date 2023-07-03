@@ -1,6 +1,12 @@
 import React from 'react';
 
-const NewsFeed = ({ image, textContent, date }) => {
+interface NewsFeedProps {
+  image: string;
+  textContent: string;
+  date: string;
+}
+
+const NewsFeed: React.FC<NewsFeedProps> = ({ image, textContent, date }) => {
   return (
     <div>
       <img src={image} alt="News Image" />

@@ -1,8 +1,16 @@
 import React from 'react';
 
-const LogoImg = ({ className }) => {
+const LogoImg = ({ className }: { className: string }) => {
   return (
-      <img className={className} src={document.documentElement.classList.contains('dark') ? "/images/logo-dark-nobg.png" : "/images/logo-light-nobg.png"} alt="Logo" />
+    <img
+      className={className}
+      src={
+        document.documentElement.classList.contains('dark')
+          ? '/images/logo-dark-nobg.png'
+          : '/images/logo-light-nobg.png'
+      }
+      alt="Logo"
+    />
   );
 };
 

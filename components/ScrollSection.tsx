@@ -1,5 +1,4 @@
-'use client'
-import React, { useState, useEffect, KeyboardEvent } from 'react';
+import React, { useState, useEffect, WheelEvent, KeyboardEvent } from 'react';
 
 const ScrollSection = () => {
   const [scrollEnabled, setScrollEnabled] = useState(true);
@@ -8,20 +7,15 @@ const ScrollSection = () => {
   useEffect(() => {
     var sections = document.querySelectorAll('.section');
     console.log(sections);
-    const handleScroll = (event) => {
+    const handleScroll = (delta: number) => {
       if (sections.length === 0) {
         console.log(sections, 'off');
         return;
       } // Return if there are no sections
 
-      event.preventDefault();
       if (!scrollEnabled) return; // Return if scroll is disabled
 
       setScrollEnabled(false); // Disable scroll temporarily
-
-      const delta = event.deltaY;
-
-      console.log(event)
 
       let currentSectionIndex = -1;
       for (let i = 0; i < sections.length; i++) {
@@ -33,12 +27,12 @@ const ScrollSection = () => {
       }
 
       let nextSectionIndex = null;
-      if (delta > 0 || event.key === 'ArrowDown' || event.key === ' ') {
+      if (delta > 0 || delta === 1) {
         nextSectionIndex = currentSectionIndex !== -1 ? currentSectionIndex + 1 : 0;
         if (nextSectionIndex >= sections.length) {
           nextSectionIndex = 0;
         }
-      } else if ( delta < 0 || event.key === 'ArrowUp'){
+      } else if (delta < 0 || delta === -1) {
         nextSectionIndex = currentSectionIndex !== -1 ? currentSectionIndex - 1 : sections.length - 1;
         if (nextSectionIndex < 0) {
           nextSectionIndex = sections.length - 1;
@@ -57,21 +51,33 @@ const ScrollSection = () => {
       }, 1000);
     };
 
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
       if (event.key === 'ArrowDown' || event.key === ' ' || event.key === 'ArrowUp') {
-        handleScroll(event);
+        let delta = 0;
+        if (event.key === 'ArrowDown' || event.key === ' ') {
+          delta = 1;
+        } else if (event.key === 'ArrowUp') {
+          delta = -1;
+        }
+        handleScroll(delta);
       }
     };
 
-    document.addEventListener('wheel', handleScroll, { passive: false });
+    const handleWheel = (event: WheelEvent<HTMLDivElement>) => {
+      event.preventDefault();
+      const delta = Math.sign(event.deltaY);
+      handleScroll(delta);
+    };
+
+    document.addEventListener('wheel', handleWheel, { passive: false });
     document.addEventListener('keydown', handleKeyDown);
     return () => {
-      document.removeEventListener('wheel', handleScroll);
+      document.removeEventListener('wheel', handleWheel);
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [scrollEnabled]); // Include scrollEnabled as a dependency
 
-  const handleSectionClick = (index) => {
+  const handleSectionClick = (index: number) => {
     const sections = document.querySelectorAll('.section');
     if (sections.length === 0) {
       console.log('No sections found');
