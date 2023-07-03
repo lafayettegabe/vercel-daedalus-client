@@ -87,7 +87,7 @@ export default function Contact() {
                             Get started right now
                         </h2>
                         <h4 className={`${currentTheme} inverse-main-txt`}>
-                            The sooner you start, the quicker you'll have it ready
+                            The sooner you start, the quicker you&apos;ll have it ready
                         </h4>
 
                         <Form
